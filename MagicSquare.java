@@ -38,6 +38,7 @@ public class MagicSquare implements MagicSquareInterface {
     private void writeMatrix(int[][] matrix, String filename) throws IOException {
         int size = matrixMagicSquare.length;
         matrix = new int[size][size];
+        matrix = matrixMagicSquare;
 
         int row = size - 1;
         int col = size / 2;
@@ -73,6 +74,7 @@ public class MagicSquare implements MagicSquareInterface {
             out.println();
         }
         out.close();
+
     }
 
     @Override
@@ -140,7 +142,6 @@ public class MagicSquare implements MagicSquareInterface {
 
     @Override
     public String toString() {
-        //int size = matrixMagicSquare.length;
         String str = "The matrix" + "\n";
         int[][] copyMatrix = getMatrix();
 
