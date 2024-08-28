@@ -69,7 +69,7 @@ public class MagicSquare implements MagicSquareInterface {
         out.println(size);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                out.print(matrix[i][j] + " ");
+                out.print(matrix[i][j] + "  ");
             }
             out.println();
         }
