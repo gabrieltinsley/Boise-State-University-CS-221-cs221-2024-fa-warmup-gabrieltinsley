@@ -1,14 +1,14 @@
 ****************
-* Project warmup
-* Class CS221
-* Date August 28, 2024
+* warmup
+* CS221
+* August 28, 2024
 * Gabriel Tinsley
 **************** 
 
 OVERVIEW:
 
- MagicSquare is a 2D array which has each integer 1 through n^2,
- and the sum of the rows, columns and two diagnols are the same value. 
+ MagicSquare is a 2D array which has each integer 1 through n^2.
+ Also the sum of the rows, columns and two diagnols are the same value. 
  MagicSquareDriver takes your command line arguments to read or create 
  the MagicSquare.
 
@@ -31,7 +31,7 @@ COMPILING AND RUNNING:
  Run the compiled class file with the command:
  $ java MagicSquareDriver -create filename number
 
- Where number is odd (1,3,5,7...)
+ Where number is **odd** (1,3,5,7...)
 
  Console output will show if the filename is a magic square
 
@@ -74,7 +74,7 @@ TESTING:
  MagicSquaresTest was written before my MagicSquare class. This tester helped
  as I worked to pass all the tests with my MagicSquare class.
 
- MagicSquaresTest include:
+ MagicSquaresTest includes:
  - Validating encapsulation
  - 1 through n^2 is in the magic square
  - The diagnols, columns and rows are equal
