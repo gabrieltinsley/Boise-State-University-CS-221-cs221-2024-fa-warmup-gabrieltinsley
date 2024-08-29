@@ -11,7 +11,7 @@ public class MagicSquareDriver {
     public static void main(String[] args) {
 
         // print usage message when not the correct number of arguments
-        if(args.length != 2 && args.length != 3) {
+        if (args.length != 2 && args.length != 3) {
             System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size (has to be odd)> ");
             System.exit(0);
         }
@@ -36,6 +36,12 @@ public class MagicSquareDriver {
             case "-create":
                 int magicSquareSize = Integer.parseInt(args[2]);
                 MagicSquare magicSquareCreate = null;
+                
+                // checks for positive integer, if so prints usage message
+                if (Integer.parseInt(args[2]) % 2 != 1) {
+                    System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size (has to be odd)> ");
+                    System.exit(0);
+                }
 
                 try {
                     magicSquareCreate = new MagicSquare(name, magicSquareSize);
