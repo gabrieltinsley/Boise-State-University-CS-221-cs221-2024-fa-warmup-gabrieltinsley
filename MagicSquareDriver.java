@@ -10,24 +10,16 @@ import java.io.FileNotFoundException;
 public class MagicSquareDriver {
     public static void main(String[] args) {
 
-        if (args.length != 2 && args.length != 3) {
-            System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size> ");
-            return;
-        }
-
-        if (args[0] != "-check" || args[0] != "-create") {
-            System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size> ");
-            return;
-        }
-        
-        if (Integer.parseInt(args[2]) % 2 != 1) {
-            System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size> ");
-            return;
+        // print usage message when not the correct number of arguments
+        if(args.length != 2 && args.length != 3) {
+            System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size (has to be odd)> ");
+            System.exit(0);
         }
 
         String type = args[0]; // type of argument "-check" or "-create"
         String name = args[1]; // name of file the user wants to "-check" or "create"
 
+        // switch statement that changes with the type of argument
         switch (type) {
             case "-check":
                 MagicSquare magicSquareCheck = null;
@@ -54,6 +46,8 @@ public class MagicSquareDriver {
                 break;
 
             default:
+                // prints usage message when user is incorrect
+                System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size (has to be odd)> ");
                 break;
 
         }

@@ -64,6 +64,8 @@ public class MagicSquare implements MagicSquareInterface {
         int size = Integer.parseInt(scnr.nextLine());
 
         int[][] mat = new int[size][size]; // mat is the matrix being read from a file
+
+        // while-loop is in a nested for-loop that is scanning the matrix
         while (scnr.hasNextInt()) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
@@ -115,9 +117,14 @@ public class MagicSquare implements MagicSquareInterface {
             }
         }
 
+        // writes file with given filename
         File file = new File(filename);
         PrintWriter out = new PrintWriter(new FileWriter(file));
+
+        // shows the size of file as the first line
         out.println(size);
+
+        // nested for loop that prints the matrix in the file
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 out.print(matrix[i][j] + "  ");
@@ -217,6 +224,7 @@ public class MagicSquare implements MagicSquareInterface {
 
         if (isMagicSquare()) {
             for (int i = 0; i < matrixMagicSquare.length; i++) {
+                str += "\t";
                 for (int j = 0; j < matrixMagicSquare[i].length; j++) {
                     str += copyMatrix[i][j] + " ";
                 }
@@ -227,6 +235,7 @@ public class MagicSquare implements MagicSquareInterface {
 
         } else {
             for (int i = 0; i < matrixMagicSquare.length; i++) {
+                str += "\t";
                 for (int j = 0; j < matrixMagicSquare[i].length; j++) {
                     str += copyMatrix[i][j] + " ";
                 }
