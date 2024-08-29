@@ -102,26 +102,26 @@ public class MagicSquare implements MagicSquareInterface {
         int diagSum1 = 0;
         int diagSum2 = 0;
         int maxIndex = size - 1;
-        for (int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             diagSum1 += matrixMagicSquare[i][i];
             diagSum2 += matrixMagicSquare[i][maxIndex - i];
         }
-        if((diagSum1 != target) || (diagSum2 != target)) {
+        if ((diagSum1 != target) || (diagSum2 != target)) {
             return false;
         }
         int allNumsCheck = size * size;
         boolean[] nums = new boolean[allNumsCheck + 1];
-        for(int i = 0; i < size; i++) {
-            for(int j = 0; j < size; j++){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 int goodNum = matrixMagicSquare[i][j];
 
-                if(goodNum >= 1 && goodNum <= allNumsCheck) {
+                if (goodNum >= 1 && goodNum <= allNumsCheck) {
                     nums[goodNum] = true;
                 }
             }
         }
-        for(int i = 1; i < allNumsCheck; i++) {
-            if(!nums[i]) {
+        for (int i = 1; i < allNumsCheck; i++) {
+            if (!nums[i]) {
                 return false;
             }
         }
@@ -145,25 +145,24 @@ public class MagicSquare implements MagicSquareInterface {
         String str = "The matrix" + "\n";
         int[][] copyMatrix = getMatrix();
 
-        if(isMagicSquare()) {
-            for(int i = 0; i < matrixMagicSquare.length; i++) {
-                for(int j = 0; j < matrixMagicSquare[i].length; j++) {
+        if (isMagicSquare()) {
+            for (int i = 0; i < matrixMagicSquare.length; i++) {
+                for (int j = 0; j < matrixMagicSquare[i].length; j++) {
                     str += copyMatrix[i][j] + " ";
                 }
                 str += "\n";
             }
-        str += "is a magic square.";
-        return str;
-        }
-        else {
-            for(int i = 0; i < matrixMagicSquare.length; i++) {
-                for(int j = 0; j < matrixMagicSquare[i].length; j++) {
+            str += "is a magic square.";
+            return str;
+        } else {
+            for (int i = 0; i < matrixMagicSquare.length; i++) {
+                for (int j = 0; j < matrixMagicSquare[i].length; j++) {
                     str += copyMatrix[i][j] + " ";
                 }
                 str += "\n";
             }
-        str += "is not a magic square.";
-        return str;
+            str += "is not a magic square.";
+            return str;
         }
     }
 }
