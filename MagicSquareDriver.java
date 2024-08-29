@@ -19,7 +19,7 @@ public class MagicSquareDriver {
             System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size> ");
             return;
         }
-
+        
         if (Integer.parseInt(args[2]) % 2 != 1) {
             System.out.println("Usage: java MagicSquareDriver <-check | -create> <filename> < |size> ");
             return;
